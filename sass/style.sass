@@ -1,0 +1,814 @@
+@import fonts
+@import mixins
+
+
+html, body
+    padding: 0
+    margin: 0
+
+ul
+    padding: 0
+    margin: 0
+    list-style: none
+
+a
+    text-decoration: none
+    outline: none
+
+.wrapper
+    width: 1170px
+    padding-left: 15px
+    padding-right: 15px
+    margin: 0 auto
+
+section
+    width: 100%
+    padding-top: 100px
+    padding-bottom: 100px
+
+// preloader
+.preloader
+    position: fixed
+    top: 0
+    left: 0
+    background: #fff
+    z-index: 999999
+    width: 100%
+    height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    transition: 1s all
+    opacity: 1
+    visibility: visible
+    & .loader
+        width: 400px
+        &-perc
+            display: block
+            width: 0
+            height: 5px
+            background: rgb(75,224,29)
+            border-radius: 3px
+            transition: 3s
+        
+.done
+    opacity: 0
+    visibility: hidden
+// end preloader
+
+// header-section
+header
+    width: 100%
+    height: 120px
+    background: rgba(0,0,0, 0.9)
+    position: fixed
+    z-index: 9
+    transition: 0.3s
+
+.navbar
+    position: absolute
+    width: 100%
+    background: rgba(0,0,0, 0.9)
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    display: none
+    &-lang
+        margin: 10px
+        & a 
+            margin-left: 15px
+            & img
+                width: 38px
+    & ul
+        margin-bottom: 30px 
+        & li 
+            text-align: center
+            & a
+                color: #fff
+                font-family: 'Raleway Regular'
+                font-size: 28px
+                font-weight: 400
+                line-height: 43px
+                margin-bottom: 20px
+    &-contacts
+        align-self: flex-end
+        border-top: 1px solid rgba(255,255,255, 0.4)
+        width: 100%
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        justify-content: center
+        &-phone,
+        &-email
+            margin: 10px
+            &_title,
+                margin-right: 30px
+                color: #fff
+                font-family: 'Raleway Regular'
+                font-size: 16px
+                font-weight: 400
+                line-height: 22px
+            &_tel a,
+            &_mail a
+                color: #fff
+                font-family: 'Open Sans Regular'
+                font-size: 16px
+                font-weight: 400
+                line-height: 22px
+                margin-bottom: 20px
+
+.head-contacts
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding-top: 10px
+    padding-bottom: 10px
+    border-bottom: 1px solid rgba(255,255,255, 0.3)
+    &-phone,
+    &-email,
+    &-social,
+    &-lang
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        &_title
+            color:  #ffffff
+            font-family: 'Open Sans Regular'
+            font-size: 14px
+            font-weight: 300
+            letter-spacing: 1px
+            margin-right: 10px
+        &_tel,
+        &_mail
+            display: flex
+            flex-direction: column
+            align-items: flex-start 
+            & a
+                text-decoration: none
+                color: #ffffff
+                font-size: 14px
+                line-height: 20px
+                font-family: 'Open Sans Regular'
+                transition: 0.3s
+                &:hover
+                    text-decoration: none
+                    color: #6de315
+        &_icon
+            font-size: 24px
+            margin-right: 15px
+            border-radius: 3px
+            transition: 0.3s
+        & .facebook
+            color: #1877f2
+        & .instagram
+            color: #b901a1
+        & .telegram
+            color: #2a9fda
+        &_flags
+            margin-left: 20px 
+            & img
+                width: 30px 
+
+.header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    height: 70px
+    &-logo
+        display: flex
+        justify-content: space-between
+        align-items: center
+        &_img
+            width: 70px
+            height: 70px
+            & img
+                width: 100%
+                height: 100%
+        &_slogan
+            display: flex
+            justify-content: center
+            align-items: center
+            flex-direction: column
+            & span:first-child
+                & a
+                    color: rgb(75,224,29)
+                    font-family: 'Magistral', 'Arial', sans-serif
+                    font-size: 30px
+            & span:last-child
+                color: rgb(254,13,80)
+                font-family: 'Marck Script Regular', 'Arial', sans-serif
+                font-size: 16px
+                letter-spacing: 2px
+                margin-top: -2px
+    &-nav
+        width: 600px
+        height: 100%
+        & ul
+            width: 100%
+            height: 100%
+            display: flex
+            justify-content: space-between
+            align-items: center
+            margin: 0
+            & li a
+                opacity: 0.69
+                color: #ffffff
+                font-family: 'Open Sans Regular', 'Arial', sans-serif
+                font-size: 18px
+                font-weight: 600
+                text-decoration: none
+                letter-spacing: 1.3px
+                transition: 0.3s
+    &-btn
+        display: none
+        &_bars,
+        &_close
+            font-size: 30px
+            color: #b4b4b4
+            cursor: pointer
+        &_close
+            display: none
+// end header-section
+
+// section-main
+.section-main
+    width: 100%
+    height: 100vh
+    padding: 0
+
+.slider
+    max-width: 100%
+    height: 100%
+    position: relative
+    overflow: hidden
+    & .items
+        animation: fade 1.5s
+        position: relative
+        width: 100%
+        height: 100vh
+        & .slider-title
+            position: absolute
+            width: 500px
+            top: 30%
+            left: 10%
+            background: rgba(255,255,255, 0.3)
+            box-shadow: 0 0 3px 7px rgba(255,255,255, 0.3)
+            border-radius: 5px
+            &_logo-img
+                width: 100%
+            &_items
+                display: flex
+                flex-direction: column
+                justify-content: space-between
+                align-items: flex-start
+                padding-left: 5px
+                margin: 30px 0
+                & span, p
+                    color: #212121
+                    font-family: 'Raleway Regular'
+                    font-size: 16px
+                    font-weight: 300
+                    line-height: 23px
+                & h1
+                    color: #212121
+                    font-family: 'Raleway Regular'
+                    font-size: 36px
+                    font-weight: bolder
+                    text-transform: uppercase
+                    letter-spacing: 2px
+            &_button
+                padding: 10px 30px
+                color: #212121
+                font-family: "Open Sans Regular"
+                font-size: 18px
+                font-weight: 600
+                border: 2px solid #212121
+                text-decoration: none
+                margin-left: 5px
+                border-radius: 5px
+                background: none
+                cursor: pointer
+                display: inline-block
+    & .truck-bg
+        background: url(../img/gruzovoy-avto-v-lizing.webp) center no-repeat
+        background-size: cover
+    & .car-bg
+        background: url(../img/legkovoy-avtomobil-v-lizing.webp) center no-repeat
+        background-size: cover
+    & .office-bg
+        background: url(../img/kommercheskaya-nedvijimost-v-lizing.webp) center no-repeat
+        background-size: cover
+    & .heavy-bg
+        background: url(../img/spetsialnaya-tehnika-v-lizing.webp) center no-repeat
+        background-size: cover
+    
+    @keyframes fade
+        from
+            opacity: 0.4
+        to
+            opacity: 1
+// end section-main
+
+// About-section    
+.section-about
+    background: #f5f5f5
+    & h3
+        +section-title-h3
+    & hr
+        +section-title-hr
+.about
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &-title
+        width: 60%
+        & p
+            color: #86878b
+            font-family: "Open Sans Regular"
+            font-size: 16px
+            font-weight: 400
+            line-height: 26px
+            &:nth-child(3)                
+                margin-bottom: 40px
+        .contact-us
+            +btn
+    &-img img
+        width: 400px
+// end section-about
+
+// section-advantage
+.section-advantage
+    & h3
+        +section-title-h3
+    & hr
+        +section-title-hr
+.advantage
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    & span
+        color: #86878b
+        font-family: "Open Sans Regular"
+        font-size: 14px
+        font-weight: 400
+        line-height: 20px
+        text-align: center
+    &-cards
+        width: 100%
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        margin-top: 50px
+        &_item
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: space-between
+            width: 265px
+            &-icon
+                width: 70px
+                height: 70px
+                border: 2px solid #ff8b38 
+                font-size: 28px
+                color: #ff8b38
+                border-radius: 50%  
+                display: flex
+                justify-content: center
+                align-items: center
+            & h4
+                color: #333333
+                font-family: "Open Sans Regular"
+                font-size: 20px
+                font-weight: 700
+                line-height: 24px
+                margin-top: 25px
+                margin-bottom: 25px
+                text-align: center
+            & span
+                color: #86878b
+                font-family: "Open Sans Regular"
+                font-size: 14px
+                font-weight: 400
+                line-height: 20px
+// end section-advantage
+
+// section-service
+.section-service,
+.section-news
+    background: #f5f5f5
+    & h3
+        +section-title-h3
+    & hr
+        +section-title-hr
+.section-news
+    padding-top: 150px
+.service-items
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        margin-bottom: 50px
+        &_img
+            box-shadow: 5px 5px 10px 3px rgba(0,0,0, 0.3)
+            max-width: 500px
+            max-height: 300px
+            overflow: hidden
+            & img
+                width: 100%
+                height: auto
+        &_description
+            width: 500px
+            & h4
+                color: #212121
+                font-family: "Open Sans Regular"
+                font-size: 20px
+                font-weight: 700
+                line-height: 35px
+                margin-top: 0
+            & p
+                color: #86878b
+                font-family: "Open Sans Regular"
+                font-size: 14px
+                font-weight: 400
+                line-height: 20px
+                margin-bottom: 20px
+            &-btn
+                +btn
+                box-shadow: 0 0 5px 1px rgba(0,0,0, 0.3)
+// end section-service
+
+// section-partners
+.section-partners
+    & h3
+        +section-title-h3
+    & hr
+        +section-title-hr
+    & .partners 
+        display: flex
+        justify-content: space-between
+        align-items: center
+        & .partners-logo
+            display: flex
+            justify-content: center
+            align-items: center
+            & a img
+                max-width: 180px
+// end section-partners
+
+// section-calculator
+.section-calculator
+    background:  url(../img/calculator-lizinga.webp) center no-repeat
+    background-size: cover
+    & .wrapper
+        background: rgba(255,255,255, 0.6)
+        box-shadow: 0 0 3px 7px rgba(255,255,255, 0.6)
+        border-radius: 5px
+        & h3
+            +section-title-h3
+        & hr
+            +section-title-hr
+    & .calculator
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        &-result
+            width: 45%
+            & h4
+                color: #212121
+                font-family: 'Raleway Regular'
+                font-size: 18px
+                font-weight: 600
+                line-height: 43px
+                text-transform: uppercase
+                margin-bottom: 20px
+                text-align: center
+            &_items
+                width: 100%
+                height: 208px
+                display: flex
+                flex-direction: column
+                justify-content: space-between
+                align-items: flex-start
+                &__data
+                    display: flex
+                    justify-content: space-between
+                    align-items: flex-start
+                    width: 100%
+                    & span
+                        line-height: 20px
+                        font-family: 'Open Sans Regular'
+                        font-weight: 600
+                        font-size: 16px
+                        color: #212121
+                    & input
+                        width: 25%
+                        border: none
+                        outline: none
+                        border-bottom: 2px solid #ff8b38
+                        background: transparent
+                        padding: 3px 15px
+                        margin-bottom: 29px
+                        line-height: 20px
+                        font-family: 'Open Sans Regular'
+                        font-weight: 600
+                        font-size: 16px
+                        color: #212121
+                        text-align: right
+                        &::-webkit-outer-spin-button,
+                        &::-webkit-inner-spin-button
+                            -webkit-appearance: none
+                    & input[type="range"]
+                        -webkit-appearance: none
+                        height: 1px
+                        background: #ff8b38
+                        border-radius: 3px
+                        &::-webkit-slider-thumb
+                            -webkit-appearance: none
+                            width: 20px
+                            height: 20px
+                            border-radius: 50%
+                            background: #ff8b38
+                            box-shadow: 0 0 4px 3px #fff
+            & .count-btn
+                width: 200px
+                +btn
+// end section-calculator
+
+// section-docs
+.section-docs
+    background: #f5f5f5
+    & h3
+        +section-title-h3
+    & hr
+        +section-title-hr
+    & .docs
+        width: 100%
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        flex-wrap: wrap
+        & .doc
+            width: 250px
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            align-items: center
+            margin-bottom: 30px
+            &-img
+                display: flex
+                justify-content: center
+                align-items: center
+                height: 145px
+                margin-bottom: 15px
+                & img
+                    max-width: 125px
+            & a
+                color: #212121
+                font-family: 'Raleway Regular'
+                font-size: 16px
+                font-weight: 600
+                line-height: 26px
+                text-decoration: none
+                text-align: center
+
+// end section-docs
+
+
+
+// section-contacts
+.section-contacts
+    & h3
+        +section-title-h3
+    & hr
+        +section-title-hr
+    & .wrapper
+        display: flex
+        justify-content: space-between
+        align-items: center
+        & .contacts
+            &-phone,
+            &-email,
+            &-adress,
+            &-requisite
+                width: 100%
+                display: flex
+                flex-direction: column
+                justify-content: space-between
+                align-items: flex-start
+                &_title
+                    color: #212121
+                    font-family: 'Raleway Regular'
+                    font-size: 16px
+                    font-weight: 600
+                    line-height: 43px
+                    text-transform: uppercase
+                    margin-bottom: 10px
+                    margin-left: 30px
+                &_tel,
+                &_mail,
+                &_ads,
+                &_items
+                    display: flex
+                    flex-direction: column
+                    justify-content: space-between
+                    align-items: flex-start
+                    margin-bottom: 15px
+                    & span
+                        line-height: 16px
+                        font-family: 'Open Sans Regular'
+                        font-weight: 600
+                        font-size: 16px
+                        color: #212121
+                        margin-bottom: 5px
+                    & a
+                        color: #5a5b5d
+                        font-family: "Open Sans Regular"
+                        font-size: 16px
+                        font-weight: 400
+                        line-height: 20px
+                        text-decoration: none
+                    & i
+                        color: #ff8b38
+                        font-size: 20px
+                        margin-right: 10px
+        & .contact-us
+            width: 520px
+            max-height: 730px
+            overflow: hidden
+        & .contact-us-btn button
+            +btn
+            display: none
+// end section contacts
+
+
+// footer-section
+footer
+    width: 100%
+    padding-top: 70px
+    padding-bottom: 30px
+    background: #333333
+    & .copyright
+        color:  #ffffff
+        font-family: 'Open Sans Regular'
+        font-size: 12px
+        letter-spacing: 1px
+        text-align: center
+    & .footer-wrapper
+        // box-shadow: 0 0 7px 3px #eaeaea
+        // padding: 20px
+        // border-radius: 5px
+        display: flex
+        justify-content: space-around
+        align-items: center
+        & .footer
+            display: flex
+            justify-content: space-between
+            align-items: center
+            flex-direction: column
+            &-logo-img
+                width: 300px
+                margin-bottom: 30px
+            &-company
+                width: 300px
+                & p
+                    line-height: 20px
+                    font-family: 'Open Sans Regular'
+                    font-size: 14px
+                    color: #ffffff
+                    text-align: justify
+        & .map
+            width: 600px   
+// end footer-section
+
+// modal
+.modal
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 9999
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1)
+    width: 100%
+    height: 100vh
+    display: none
+    justify-content: center
+    align-items: center
+    &-callback
+        width: 500px
+        position: relative 
+        display: none
+        &_close
+            position: absolute
+            top: 15px
+            right: 15px
+            font-size: 22px
+            cursor: pointer
+    &-service
+        width: 90%
+        height: 90vh
+        background: #fff
+        position: relative
+        display: none
+        justify-content: center
+        align-items: center
+        background: url(../img/lizing.webp) center no-repeat
+        background-size: cover
+        &_close
+            position: absolute
+            top: 15px
+            right: 15px
+            font-size: 22px
+            cursor: pointer 
+        &_block
+            width: 100%
+            height: 100%
+            padding-top: 100px
+            &-logo
+                position: absolute
+                top: 15px
+                left: 15px
+                & img
+                    max-width: 240px
+            &-content
+                width: 65%
+                height: 85%
+                margin: 0 auto
+                padding: 20px
+                background: rgba(255,255,255, 0.7)
+                box-shadow: 0 0 3px 7px rgba(255,255,255, 0.7)
+                border-radius: 5px
+                overflow: scroll
+                overflow-x: hidden
+                &::-webkit-scrollbar
+                    width: 10px
+                    background: rgba(#ff8b38, 0.5)
+                &::-webkit-scrollbar-thumb
+                    width: 10px
+                    height: 10px
+                    background: #ff8b38
+                & h4
+                    color: #212121
+                    font-family: 'Raleway Regular'
+                    font-size: 20px
+                    font-weight: 400
+                    line-height: 28px
+                    text-transform: uppercase
+                    margin-bottom: 20px
+                    text-align: center
+                & hr
+                    border: none
+                    width: 100px
+                    height: 2px
+                    background: #ff8b38
+                    margin-bottom: 40px
+                & table
+                    width: 70%  
+                    margin: 0 auto
+                    border-collapse: collapse
+                    & tr
+                        width: 100%
+                        height: 30px
+                        & th
+                            font-family: 'Open Sans Regular'
+                            font-weight: 600
+                            font-size: 18px
+                            border: 1px solid rgba(0,0,0, 0.4)
+                        & td
+                            font-family: 'Open Sans Regular'
+                            font-size: 14px
+                            padding-left: 15px 
+                            border: 1px solid rgba(0,0,0, 0.4)
+                            &:first-child
+                                width: 33%
+                                font-weight: 600
+                            & ul li
+                                list-style-type: disc
+                                margin-left: 25px
+                                line-height: 20px
+                                & a
+                                    font-weight: 600
+                                    color: #212121
+                            & ol 
+                                padding: 0
+                                margin: 0
+                                & li
+                                    margin-left: 25px
+                                    line-height: 20px
+                &_docs
+                    display: flex
+                    justify-content: space-around
+                    align-items: center
+                    width: 70%
+                    margin: 20px auto
+                    & a
+                        display: block
+                        width: 250px
+                        box-shadow: 0 0 5px 1px rgba(0,0,0, 0.3)
+                        text-decoration: none
+                        text-align: center
+                        +btn
+// end modal
+
+
+
